@@ -46,7 +46,7 @@ public class B1654 {
 	static int findSum(int[] leights, int center) {
 		int sum = 0;
 		for (int leight : leights) {
-			System.out.println(leight);
+		//	System.out.println(leight);
 			if(leight / center > 0) {
 				sum += leight/center;
 			}
@@ -72,7 +72,7 @@ public class B1654 {
 				max = leights[i];
 			}
 		}
-		System.out.println(max);
+		//System.out.println(max);
 				
 		int result = 0;
 		while(min < max) {
