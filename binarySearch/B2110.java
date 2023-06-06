@@ -62,28 +62,30 @@ public interface B2110 {
 		
 		// 내림차순 정렬
 		Arrays.sort(housePositions);
+//		System.out.println(Arrays.toString(housePositions));
 		
 		int maxDistance = 0;
 		
-		if(numberOfRouters <= 2) {
+		
+		if(numberOfRouters <= 2) { // 공유기가 2개면 두 집의 거리를 뺀 거리가 최대 거리
 			maxDistance = (housePositions[housePositions.length - 1] - housePositions[0]);
-		} else {
+		} else { // 2개 이상이면 이분검색으로 검색
 			int distanceStartPosition = 0;
 			int distanceEndPosition = housePositions.length - 1;
 			int startIdx = 0;
 			int endIdx = housePositions.length - 1;
-			for(int i = 1; i <= (numberOfRouters - 2); i++) {
-				
-			}
+//			for(int i = 1; i <= (numberOfRouters - 2); i++) {
+//				
+//			}
 			while(startIdx < endIdx) {
 				int centerIdx = (startIdx + endIdx) / 2;
 				int leftSum = housePositions[centerIdx] - housePositions[distanceStartPosition];
 				int rightSum = housePositions[distanceEndPosition] - housePositions[centerIdx];
-//				if(leftSum > rightSum) {
-//					maxDistance = leftSum;
-//				} else {
-//					maxDistance = rightSum;
-//				}
+				if(leftSum > rightSum) {
+					maxDistance = leftSum;
+				} else {
+					maxDistance = rightSum;
+				}
 				
 				if(leftSum == rightSum) {
 					break;
