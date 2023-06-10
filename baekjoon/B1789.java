@@ -13,7 +13,7 @@
 19
  */
 
-package greedy;
+package baekjoon;
 
 import java.util.Scanner;
 

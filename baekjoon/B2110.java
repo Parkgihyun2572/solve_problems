@@ -40,7 +40,7 @@ C개의 공유기를 N개의 집에 적당히 설치해서,
 
  */
 
-package binarySearch;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -29,7 +29,7 @@ A를 B로 바꾸는데 필요한 연산의 최솟값에 1을 더한 값을 출�
 100 → 200 → 2001 → 4002 → 40021
  */
 
-package greedy;
+package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -31,7 +31,7 @@
 6
  */
 
-package greedy;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Collections;

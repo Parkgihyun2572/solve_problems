@@ -35,9 +35,8 @@
 4
  */
 
-package greedy;
+package baekjoon;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class B1931 {

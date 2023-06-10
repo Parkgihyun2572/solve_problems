@@ -39,7 +39,7 @@ Exception in thread "main" java.lang.NumberFormatException: For input string: "7
 	at greedy.B10610.main(B10610.java:79)
  */
 
-package greedy;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

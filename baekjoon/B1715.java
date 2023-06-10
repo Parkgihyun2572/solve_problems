@@ -31,7 +31,7 @@ N개의 숫자 카드 묶음의 각각의 크기가 주어질 때, 최소한 몇
 10 20 30 40 50 60
 */
 
-package greedy;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

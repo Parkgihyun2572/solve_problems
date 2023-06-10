@@ -27,7 +27,7 @@
 
  */
 
-package binarySearch;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

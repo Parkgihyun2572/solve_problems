@@ -32,7 +32,7 @@ k개의 로프를 사용하여 중량이 w인 물체를 들어올릴 때, 각각
 가장 낮은 수부터 하나씩 확인해가며 버틸 수 있는 무게의 배열을 구한 후 최댓값 확인
  */
 
-package greedy;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

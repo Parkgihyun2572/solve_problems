@@ -20,7 +20,7 @@
 3
  */
 
-package binarySearch;
+package baekjoon;
 
 import java.util.ArrayList;
 import java.util.List;

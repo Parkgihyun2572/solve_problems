@@ -26,7 +26,7 @@ M개의 줄에 답을 출력한다. 존재하면 1을, 존재하지 않으면 0�
 1
  */
 
-package binarySearch;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

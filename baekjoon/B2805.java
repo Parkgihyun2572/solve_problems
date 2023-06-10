@@ -29,7 +29,7 @@
 # 예제 출력
 15
  */
-package binarySearch;
+package baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;

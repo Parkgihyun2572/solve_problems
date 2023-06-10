@@ -37,7 +37,7 @@ K는 1이상 10,000이하의 정수이고, N은 1이상 1,000,000이하의 정�
 200
  */
 
-package binarySearch;
+package baekjoon;
 
 import java.util.Scanner;
 

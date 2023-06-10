@@ -40,7 +40,7 @@ A와 B의 각 원소는 100보다 작거나 같은 음이 아닌 정수이다.
 
  */
 
-package greedy;
+package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
