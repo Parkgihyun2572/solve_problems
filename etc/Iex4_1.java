@@ -4,7 +4,7 @@
 R R R U D D
  */
 
-package implementation;
+package etc;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -19,7 +19,6 @@ public class Iex4_1 {
 		
 		// 입력받기
 		int width = scan.nextInt();
-		String blank = scan.nextLine();
 		String movingPlan = scan.nextLine();
 		movingPlan = movingPlan.replaceAll("\\s", "");		
 		scan.close();
