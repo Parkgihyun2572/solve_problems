@@ -23,8 +23,8 @@ public class B1003 {
 			bottomUpMemo = new int[MAXTESTCOUNT + 1][2]; 
 
 			int givenNum = Integer.parseInt(br.readLine());
-//			int[] answer = topDownFibonacci(givenNum);
-			int[] answer = bottomUpFibonacci(givenNum);
+			int[] answer = topDownFibonacci(givenNum);
+//			int[] answer = bottomUpFibonacci(givenNum);
 			
 			bw.write(String.valueOf(answer[0]) + " ");
 			bw.write(String.valueOf(answer[1]) + "\n");			
@@ -51,8 +51,8 @@ public class B1003 {
 		}
 		
 		// 재귀를 사용
-		topDownMemo[givenNum][0] = topDownMemo[givenNum - 1][0] + topDownMemo[givenNum - 2][0];
-		topDownMemo[givenNum][1] = topDownMemo[givenNum - 1][1] + topDownMemo[givenNum - 2][1];
+		topDownMemo[givenNum][0] = topDownFibonacci(givenNum - 1)[0] + topDownFibonacci(givenNum - 2)[0];
+		topDownMemo[givenNum][1] = topDownFibonacci(givenNum - 1)[1] + topDownFibonacci(givenNum - 2)[1];
 		
 		return topDownMemo[givenNum];
 	}
