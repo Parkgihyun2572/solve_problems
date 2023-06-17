@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class B2745 {
-
 	
 	static int convertToDecimal (String givenNum, int arithmetic) {	
 		HashMap<String, Integer> table = new HashMap<>();
