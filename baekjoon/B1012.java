@@ -26,83 +26,73 @@
 package baekjoon;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class B1012 {
 	
-	static int M, N, K;
-	static int[][] cabbage;
-	static boolean[][] visit;
-	static int count;
-	static int[] dx = { 0, -1, 0, 1 };
-	static int[] dy = { 1, 0, -1, 0 };
-
-	static void dfs(int x, int y) {
-		visit[x][y] = true;
-
-		for (int i = 0; i < 4; i++) {
-			int cx = x + dx[i];
-			int cy = y + dy[i];
-
-			if (cx >= 0 && cy >= 0 && cx < M && cy < N) {
-				if (!visit[cx][cy] && cabbage[cx][cy] == 1) {
-					dfs(cx, cy);
-				}
-			}
-
-		}
-
-	}
-
+	static int testCases, width, height, numberOfCabbages, numberOfBugs;
+	static int x, y;
+	static int [][] farm;
+	static boolean [][] visited;
+	static int[] dx = {0, -1, 0, 1};
+	static int[] dy = {1, 0, -1, 0};
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static StringTokenizer st;
+	
 	public static void main(String[] args) throws NumberFormatException, IOException {
-
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int tc = Integer.parseInt(br.readLine());
-
-		for (int i = 0; i < tc; i++) {
-			count = 0;
-			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-			M = Integer.parseInt(st.nextToken());
-			N = Integer.parseInt(st.nextToken());
-			cabbage = new int[M][N];
-			visit = new boolean[M][N];
-
-			K = Integer.parseInt(st.nextToken());
-			for (int j = 0; j < K; j++) {
-				st = new StringTokenizer(br.readLine(), " ");
-				int p1 = Integer.parseInt(st.nextToken());
-				int p2 = Integer.parseInt(st.nextToken());
-				cabbage[p1][p2] = 1;
+		testCases = Integer.parseInt(br.readLine());
+		for(int i = 0; i < testCases; i++) { // 테스트 수 만큼 실시
+			st = new StringTokenizer(br.readLine());
+			width = Integer.parseInt(st.nextToken());
+			height = Integer.parseInt(st.nextToken());
+			numberOfCabbages = Integer.parseInt(st.nextToken());
+			
+			farm = new int[width][height];
+			visited = new boolean[width][height];
+			for(int j = 0; j < numberOfCabbages; j++) {
+				st = new StringTokenizer(br.readLine());
+				x = Integer.parseInt(st.nextToken());
+				y = Integer.parseInt(st.nextToken());
+				farm[x][y] = 1;
 			}
-
-			for (int x = 0; x < M; x++) {
-				for (int y = 0; y < N; y++) {
-					if (cabbage[x][y] == 1 && !visit[x][y]) {
-						dfs(x, y);
-						count++;
+			
+			numberOfBugs = 0;
+			for(int j = 0; j < width; j++) {
+				for(int k = 0; k < height; k++) {
+					if(farm[j][k] == 1 && !visited[j][k]) {
+						dfs(j, k);
+						numberOfBugs++;
 					}
 				}
 			}
-			
-			for(int j = 0; j < M; j++) {
-				for(int k = 0; k < N; k++) {
-					System.out.print(cabbage[j][k] + " ");
-				}
-				System.out.println();
-			}
-			
-			for(int j = 0; j < M; j++) {
-				for(int k = 0; k < N; k++) {
-					System.out.print(visit[j][k] + " ");
-				}
-				System.out.println();
-			}
-			System.out.println(count);
+			bw.write(String.valueOf(numberOfBugs) + "\n");
 		}
-
+		bw.flush();
+		bw.close();
+		br.close();
 	}
-
+	
+	static void dfs(int x, int y) {
+		visited[x][y] = true;
+		
+		for(int i = 0; i < 4; i++) {
+			int cx = x + dx[i];
+			int cy = y + dy[i];
+			
+			if(cx >= 0 && cy >= 0 && cx < width && cy < height) {
+				if(!visited[cx][cy] && farm[cx][cy] == 1) {
+					dfs(cx, cy);					
+				}
+			}
+			
+//			for(int j = 0; j < width; j++) {
+//				System.out.println(Arrays.toString(visited[j]));				
+//			}
+		}
+	}
 }
